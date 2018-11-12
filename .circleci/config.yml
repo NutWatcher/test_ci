@@ -55,7 +55,7 @@ jobs:
           name: Deploy Over SSH
           command: |
             echo "deploy"
-            ssh $SSH_USER@$SSH_HOST "<remote deploy command>"
+            ssh root@101.132.64.76 " echo remote"
 
 workflows:
   version: 2
