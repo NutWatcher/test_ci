@@ -55,7 +55,7 @@ jobs:
           name: Deploy Over SSH
           command: |
             echo "deploy"
-            ssh root@101.132.64.76 "echo remote && cd /var/test && mkdir circle`date "+%Y%m%d-%R"`"
+            ssh root@101.132.64.76 "echo remote && date -R && cd /var/test && mkdir circle`date "+%Y%m%d-%R"`"
 
 workflows:
   version: 2
