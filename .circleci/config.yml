@@ -52,6 +52,9 @@ jobs:
       enabled: true
     steps:
       - run:
+          name: Switch timezone to China
+          command: cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
+      - run:
           name: Deploy Over SSH
           command: |
             echo "deploy"
