@@ -21,13 +21,13 @@ jobs:
       - run:
         name: build minified assets
         command: |
-          echo branch
+          echo "branch"
           if [ "$CIRCLE_BRANCH" == "master" ];
           then
-            echo $CIRCLE_BRANCH" -- master
+            echo $CIRCLE_BRANCH -- master
           if [ "$CIRCLE_BRANCH" == "v4" ];
           then
-            echo $CIRCLE_BRANCH" -- v4
+            echo $CIRCLE_BRANCH -- v4
           fi
           echo $CIRCLE_BRANCH
       # Download and cache dependencies
