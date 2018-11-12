@@ -18,10 +18,20 @@ jobs:
 
     steps:
       - checkout
-
       - run:
-        name: build minified assets
-
+          name: build minified assets
+          command: |
+            echo "branch"
+            if [ "$CIRCLE_BRANCH" == "master" ];
+            then
+              echo $CIRCLE_BRANCH -- master
+            fi
+            if [ "$CIRCLE_BRANCH" == "v4" ];
+            then
+              echo $CIRCLE_BRANCH -- v4
+            fi
+            echo $CIRCLE_BRANCH
+      # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
